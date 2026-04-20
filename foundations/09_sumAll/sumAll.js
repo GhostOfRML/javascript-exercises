@@ -1,18 +1,16 @@
 const sumAll = function(a,b) {
 // Do not edit below this line
-let sum= 0 ;
-    if (a<b){
-        for(let i = a ; i <= b; i++){
-         sum += i;
-        }
-    return sum;
-    }else if(a>b){
-        for(let i = b ; i <= a; i++){
-         sum += i;
-        }
-    return sum;
-    }
-};
+if (!Number.isInteger(a) || !Number.isInteger(b) ||a < 0 ||b < 0)  {
+    return 'ERROR'
+}
+const start = Math.min(a, b);
+const end = Math.max(a, b);
 
+let sum= 0;
+for (let i = start ;i <=end; i++){
+ sum += i;
+};
+return sum;
+}
 // Do not edit below this line
 module.exports = sumAll;
